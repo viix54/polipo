@@ -4,9 +4,6 @@ import {F} from "polipo/react";
 
 import InputComponent from './inputComonent';
 
-
-
-
 export default function Home() {
   return (
     <>

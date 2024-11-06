@@ -6,6 +6,8 @@ import { FigmaProvider, devPlugin, googleFontsPlugin } from "polipo/react";
 
 import layoutData from '../../src/app/layout2.json';
 
+import * as fs from 'node:fs';
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,6 +29,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  (() => {
+    fs.writeFile('prod_log.txt',process.env.NODE_ENV,function(err){
+      if(err){
+        return console.log(err);
+      }
+      console.log(`Added !`)
+    })
+  })()
+
   return (
     <html lang="en">
       <body
