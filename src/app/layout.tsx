@@ -31,12 +31,7 @@ export default function RootLayout({
 }>) {
 
   (() => {
-    fs.writeFile('prod_log.txt',process.env.NODE_ENV,function(err){
-      if(err){
-        return console.log(err);
-      }
-      console.log(`Added !`)
-    })
+    console.log(process.env.NODE_ENV)
   })()
 
   return (
