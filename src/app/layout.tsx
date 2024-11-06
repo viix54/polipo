@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { nextSsrCssPlugin } from "polipo/next";
+import { FigmaProvider, devPlugin, googleFontsPlugin } from "polipo/react";
+
+import layoutData from '../../src/app/layout.json';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +32,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <FigmaProvider
+          layoutData={layoutData}
+          plugins={[
+            ...(process.env.NODE_ENV === "development" ? [devPlugin] : []),
+            nextSsrCssPlugin,
+            googleFontsPlugin,
+          ]}
+        >
+          {children}
+        </FigmaProvider>
       </body>
     </html>
   );

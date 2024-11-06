@@ -1,101 +1,108 @@
+'use client';
+
 import Image from "next/image";
+import {F} from "polipo/react";
+import Lottie from "lottie-react";
+import notEasyAnimation from './data.json';
+import { Span } from "next/dist/trace";
+
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+
+import PizzaButComp from "./PizzaButComp";
+import InputComponent from './inputComonent';
+import { Service } from "./components/Service";
+import { HomePage } from "./components/HomePage";
+
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* <F layout="xl:Page2/Desktop2 2xl:Page1/Desktop"></F>
+      <F layout="Page2/ClickMeSection/Frame1"></F>
+      <F layout="Page1/Desktop">
+      {{
+        Group5: <F as="button" onClick={() => console.log(`hey`)}/>,
+        Group2:null
+      }}
+      </F> */}
+   
+        {/* <F layout="Page1/HomepageV2 w-fill" state={{service1: true}}>
+          {{
+            ArticleSmall:<> 
+            <F as="button" style={{zIndex:0}}></F> 
+            <F>
+              {{
+                Image:<span style={{color:'red'}}>Hello</span>
+              }}</F> </>,
+            Application: <>
+                <F as='div' style={{color:'black'}}>
+                  {{
+                    ApplicationForm:<>
+                    
+                        <div style={{width:'100%', height:'100%',display:'flex',justifyContent:'space-evenly',alignItems:'center'}}>
+                          <F as='div' style={{border:'3px solid red',top:'0px',left:'0px'}}>
+                            {{
+                              SendRequest: <span>Dont touch me!</span>
+                            }}
+                          </F>
+                          <F as='div' style={{border:'3px solid black'}}></F>
+                          <F></F>
+                        </div>
+                        {console.log(process.env.NODE_ENV)}
+                    </>
+                  }}
+                </F>
+            </>}}             </F> */}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <F layout="Page1/ButtonResting" as="button" style={{position:'absolute',left:'1000px'}}/>
+        <F layout="Page1/InputResting">
+          {{
+            Box: <F>{{
+              Content: <input type="text" style={{width:'100%'}}/>
+            }}</F>
+          }}
+        </F>
+        <F layout="Page1/CheckboxDisabled">
+        {{
+          BoundingBox: <input type="checkbox" name="" id="" />,
+          Value: <F>
+            <label htmlFor="coding">New Label</label>
+          </F>
+        }}
+        </F>
+        <F layout="sm:Page1/TableTime xl:Page1/TableTimeV2 w-fill">
+        {{
+          Table: <F>
+            {{
+              TableRow:<>
+                <div style={{width:'100%',height:'100%', display:'flex', flexDirection:'column',justifyContent:'space-evenly',border:'1px solid yellow'}}>
+                  <F></F>
+                  <F as="div" style={{border:'1px solid red'}}>
+                    {{
+                      IdPole: <F>
+                        {{
+                          Text: <F>
+                            <span>hes</span>
+                          </F>
+                        }}
+                      </F>
+                    }}
+                  </F>
+                  <F as="div" style={{border:'1px solid red'}}></F>
+                  <F as="div" style={{border:'1px solid red'}}></F>
+                </div>
+              </>,
+              Date: <F>
+                <input type="text" style={{width:'100%'}}/>
+              </F>,
+              Date2: <F>
+                <InputComponent/>
+              </F>
+            }}
+          </F>
+        }}</F>
+        <F layout="Page1/EmptyLayout xl:Page1/TableTimeV2 w-fill"></F>
+    </>
   );
 }
