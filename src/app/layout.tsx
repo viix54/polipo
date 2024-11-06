@@ -6,7 +6,6 @@ import { FigmaProvider, devPlugin, googleFontsPlugin } from "polipo/react";
 
 import layoutData from '../../src/app/layout2.json';
 
-import * as fs from 'node:fs';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
