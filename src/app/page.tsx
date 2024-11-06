@@ -1,17 +1,9 @@
 'use client';
 
-import Image from "next/image";
 import {F} from "polipo/react";
-import Lottie from "lottie-react";
-import notEasyAnimation from './data.json';
-import { Span } from "next/dist/trace";
 
-import { BrowserRouter,Routes, Route } from "react-router-dom";
-
-import PizzaButComp from "./PizzaButComp";
 import InputComponent from './inputComonent';
-import { Service } from "./components/Service";
-import { HomePage } from "./components/HomePage";
+
 
 
 
