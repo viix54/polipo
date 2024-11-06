@@ -4,7 +4,7 @@ import "./globals.css";
 import { nextSsrCssPlugin } from "polipo/next";
 import { FigmaProvider, devPlugin, googleFontsPlugin } from "polipo/react";
 
-import layoutData from '../../src/app/layout.json';
+import layoutData from '../../src/app/layout2.json';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
